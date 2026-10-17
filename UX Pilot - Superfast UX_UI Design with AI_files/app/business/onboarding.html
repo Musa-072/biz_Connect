@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Registration | BizConnect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../public/home.html" class="brand" aria-label="BizConnect home">
+          <span class="brand-mark">B</span>
+          BizConnect
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="../public/home.html">Home</a>
+          <a href="../public/marketplace.html">Marketplace</a>
+          <a href="../public/businesses.html">Businesses</a>
+          <a href="../public/about.html">About</a>
+          <a href="../public/contact.html">Contact</a>
+          <a href="onboarding.html" class="active">For Business</a>
+        </nav>
+        <div class="header-actions">
+          <a href="../account/login.html" class="btn btn-light">Log in</a>
+          <a href="../account/signup.html" class="btn btn-primary">Join now</a>
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation">Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container auth-grid">
+          <div class="auth-card">
+            <span class="eyebrow">Soshanguve Enterprise Hub</span>
+            <h1>Register your informal business online.</h1>
+            <p>Register your informal business in Soshanguve, set your trading area, and manage your products.</p>
+            <ul>
+              <li>Create a business profile for local spaza shops &amp; vendors</li>
+              <li>Reach customers in Soshanguve</li>
+              <li>Set your trading area and contact details</li>
+            </ul>
+          </div>
+
+          <div class="form-panel">
+            <h2>Business Onboarding</h2>
+            <section id="register" class="page-section active" style="display: block;">
+              <form id="regForm" onsubmit="handleRegistration(event)">
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Step 1: Business &amp; Contact Information</h3>
+
+                <div class="form-field" style="margin-bottom: 1rem;">
+                  <label for="bizName">Business Name</label>
+                  <input type="text" id="bizName" required placeholder="e.g. Soshanguve Fresh Produce &amp; Spaza" />
+                </div>
+
+                <div class="form-row" style="margin-bottom: 1rem;">
+                  <div class="form-field">
+                    <label for="bizPhone">Phone Number</label>
+                    <input type="tel" id="bizPhone" required placeholder="e.g. 072 123 4567" />
+                  </div>
+                  <div class="form-field">
+                    <label for="bizEmail">Email Address</label>
+                    <input type="email" id="bizEmail" required placeholder="e.g. business@gmail.com" />
+                  </div>
+                </div>
+
+                <div class="form-field" style="margin-bottom: 1rem;">
+                  <label for="bizLocation">Soshanguve Location / Block</label>
+                  <select id="bizLocation" required>
+                    <option value="">Choose your Soshanguve area</option>
+                    <option>Soshanguve Central</option>
+                    <option>Soshanguve Block H</option>
+                    <option>Soshanguve Block K</option>
+                    <option>Soshanguve Block L</option>
+                    <option>Soshanguve Block VV</option>
+                    <option>Near Soshanguve Crossing</option>
+                    <option>Other Soshanguve area</option>
+                  </select>
+                </div>
+
+                <div class="form-field" style="margin-bottom: 1.5rem;">
+                  <label for="bizCategory">Trading Category</label>
+                  <select id="bizCategory" required>
+                    <option value="">Choose category</option>
+                    <option>Fresh Veggies &amp; Fruits</option>
+                    <option>Sphatlo &amp; Fast Foods</option>
+                    <option>Shisa Nyama &amp; Catering</option>
+                    <option>Hair Salon &amp; Barber</option>
+                    <option>Car Wash Booking</option>
+                    <option>Electronics Repair &amp; Refurbishment</option>
+                    <option>Clothing &amp; T-Shirts</option>
+                    <option>Stationery &amp; Printing</option>
+                  </select>
+                </div>
+
+                <h3 style="margin-bottom: 1rem; color: var(--primary);">Step 2: Identity verification</h3>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">
+                  You can preview your camera and position your ID just above your forehead. This page cannot detect an ID or compare faces yet, so camera use does not verify your identity. No image is saved or sent.
+                </p>
+
+                <div class="geo-box" style="background: rgba(247, 244, 239, 0.7); padding: 1.5rem; border: 1px solid var(--border); border-radius: 14px; margin-bottom: 1.5rem; text-align: center;">
+                  <button type="button" class="btn btn-primary" id="start-verification-camera">Open camera</button>
+                  <div id="verification-camera-panel" hidden style="margin-top: 1rem;">
+                    <video id="verification-camera" autoplay muted playsinline aria-label="Live camera preview" style="display: block; width: 100%; max-width: 420px; margin: 0 auto 1rem; border-radius: 12px; background: #111;"></video>
+                    <p style="font-size: 0.9rem;">Hold your ID just above your forehead and keep your face and the ID visible in the preview.</p>
+                    <button type="button" class="btn btn-primary" id="check-verification-camera" disabled>Check ID and face</button>
+                    <button type="button" class="btn btn-secondary" id="stop-verification-camera">Close camera</button>
+                  </div>
+                  <p id="camera-analysis-status" role="status" aria-live="polite" style="margin-top: 0.8rem; font-size: 0.9rem;"></p>
+                  <p id="verification-status" style="margin-top: 0.8rem; font-weight: bold; color: var(--warning); font-size: 0.9rem;"></p>
+                  <p>Your identity has not been verified.</p>
+                  <button type="button" class="btn btn-secondary" onclick="acknowledgeVerificationNotice()">Continue without verification</button>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="submitRegBtn" disabled style="width:100%; background:#94a3b8; cursor:not-allowed;">Save business profile</button>
+                <div class="notice" aria-live="polite"></div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">BizConnect</div>
+            <p>Set up your local business profile and products.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <p><a href="../public/marketplace.html">Marketplace</a></p>
+            <p><a href="../public/businesses.html">Businesses</a></p>
+            <p><a href="../public/about.html">About</a></p>
+          </div>
+          <div>
+            <h3>Support</h3>
+            <p><a href="../public/contact.html">Contact</a></p>
+            <p><a href="../account/login.html">Login</a></p>
+            <p><a href="onboarding.html">Business setup</a></p>
+          </div>
+          <div>
+            <h3>Need help?</h3>
+            <p>Support channels are not available yet.</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; <span data-year></span> BizConnect Marketplace</span>
+          <span>Local brands, digital reach.</span>
+        </div>
+      </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../../assets/js/supabase-config.js"></script>
+<script src="../../assets/js/supabase.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/storefront.js"></script>
+<script src="../../assets/js/identity-camera.js"></script>
+  </body>
+</html>
+

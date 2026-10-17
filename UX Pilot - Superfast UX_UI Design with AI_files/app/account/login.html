@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | BizConnect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../public/home.html" class="brand" aria-label="BizConnect home">
+          <span class="brand-mark">B</span>
+          BizConnect
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="../public/home.html">Home</a>
+          <a href="../public/marketplace.html">Marketplace</a>
+          <a href="../public/businesses.html">Businesses</a>
+          <a href="../public/about.html">About</a>
+          <a href="../public/contact.html">Contact</a>
+          <a href="../business/onboarding.html">For Business</a>
+        </nav>
+        <div class="header-actions">
+          <a href="signup.html" class="btn btn-primary">Register a business</a>
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation">Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container auth-grid">
+          <div class="auth-card">
+            <span class="eyebrow">Welcome back</span>
+            <h1>Sign in to your account.</h1>
+            <p>Access your wishlist, orders and business tools in one secure place.</p>
+            <ul>
+              <li>Track your purchases</li>
+              <li>Save favorite businesses</li>
+              <li>Manage business visibility</li>
+            </ul>
+          </div>
+
+          <div class="form-panel">
+            <h2>Log in</h2>
+            <form data-validate>
+              <div class="form-field">
+                <label for="login-email">Email address</label>
+                <input id="login-email" type="email" required />
+              </div>
+
+              <div class="form-field">
+                <label for="login-password">Password</label>
+                <input id="login-password" type="password" required />
+              </div>
+
+              <div class="checkbox-row">
+                <input id="remember-me" type="checkbox" />
+                <label for="remember-me">Keep me signed in</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Log in</button>
+              <div class="notice" aria-live="polite"></div>
+            </form>
+
+            <p>Want to sell on BizConnect? <a href="signup.html">Register your business</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">BizConnect</div>
+            <p>Marketplace access for customers and sellers.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <p><a href="../public/marketplace.html">Marketplace</a></p>
+            <p><a href="../public/businesses.html">Businesses</a></p>
+            <p><a href="../public/about.html">About</a></p>
+          </div>
+          <div>
+            <h3>Support</h3>
+            <p><a href="../public/contact.html">Contact</a></p>
+            <p><a href="login.html">Login</a></p>
+            <p><a href="../business/onboarding.html">Business setup</a></p>
+          </div>
+          <div>
+            <h3>Need help?</h3>
+            <p>Support channels are not available yet.</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; <span data-year></span> BizConnect Marketplace</span>
+          <span>Simple account access.</span>
+        </div>
+      </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../../assets/js/supabase-config.js"></script>
+<script src="../../assets/js/supabase.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/storefront.js"></script>
+  </body>
+</html>
+
+

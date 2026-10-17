@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace | BizConnect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+  </head>
+  <body data-page="catalog">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="home.html" class="brand" aria-label="BizConnect home">
+          <span class="brand-mark">B</span>
+          BizConnect
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="home.html">Home</a>
+          <a href="marketplace.html" class="active">Marketplace</a>
+          <a href="businesses.html">Businesses</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="../business/onboarding.html">For Business</a>
+        </nav>
+        <div class="header-actions">
+          <a href="../account/login.html" class="btn btn-light">Log in</a>
+          <a href="../account/signup.html" class="btn btn-primary">Join now</a>
+          <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation">Menu</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <div>
+            <div class="breadcrumbs">Home / Marketplace</div>
+            <h1>Explore products from Soshanguve businesses.</h1>
+          </div>
+          <a href="../business/onboarding.html" class="btn btn-primary">List your business</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container market-grid">
+          <aside class="filters-panel">
+            <h3>Filters</h3>
+
+            <form id="catalog-filters">
+              <div class="filter-group">
+                <label for="search-input">Search</label>
+                <input id="search-input" type="search" placeholder="Search products" />
+              </div>
+
+              <div class="filter-group">
+                <label for="category-filter">Category</label>
+                <select id="category-filter">
+                  <option value="all">All categories</option>
+                  <option value="food">Food &amp; pantry</option>
+                  <option value="fashion">Fashion &amp; textiles</option>
+                  <option value="home">Home &amp; crafts</option>
+                  <option value="beauty">Beauty &amp; personal care</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label for="price-filter">Max price</label>
+                <input id="price-filter" type="range" min="200" max="5000" step="100" value="5000" />
+              </div>
+
+              <button type="button" id="clear-filters" class="btn btn-secondary">Clear filters</button>
+            </form>
+          </aside>
+
+          <div>
+            <div class="catalog-toolbar">
+              <div>
+                <strong>Curated results</strong>
+                <p>Fresh picks from quality sellers</p>
+              </div>
+              <span id="catalog-count" class="tag" aria-live="polite">6 products</span>
+            </div>
+
+            <div id="catalog-grid" class="catalog-grid bc-product-grid">
+              <article class="product-card" data-category="food" data-price="85">
+                <div class="media has-photo" aria-label="Fresh sourdough">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_b5bf61c3aa_c92d779b0f12a824.png" alt="Fresh sourdough loaf from a Soshanguve bakery" loading="lazy" />
+                </div>
+                <div class="body">
+                  <div class="product-meta">
+                    <span class="tag">Food &amp; pantry</span>
+                    <span class="rating">&#9733; 4.9</span>
+                  </div>
+                  <h3>Fresh Sourdough Loaf</h3>
+                  <p>Freshly baked bread from a neighbourhood seller in Soshanguve.</p>
+                  <div class="row-between">
+                    <span class="price">R 85</span>
+                    <a href="../shop/product-details.html" class="btn btn-light">Buy now</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card" data-category="beauty" data-price="120">
+                <div class="media has-photo" aria-label="Local skincare">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_4398c6d8cf_18e59d6e65219e2e.png" alt="Marula oil skincare from a local beauty seller" loading="lazy" />
+                </div>
+                <div class="body">
+                  <div class="product-meta">
+                    <span class="tag">Beauty &amp; personal care</span>
+                    <span class="rating">&#9733; 4.8</span>
+                  </div>
+                  <h3>Marula Oil &amp; Soap Set</h3>
+                  <p>Small-batch personal care from a Soshanguve neighbourhood seller.</p>
+                  <div class="row-between">
+                    <span class="price">R 120</span>
+                    <a href="../shop/product-details.html" class="btn btn-light">Buy now</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card" data-category="home" data-price="295">
+                <div class="media has-photo" aria-label="Handmade ceramic mugs">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_b5aff6e3b2_3c633ce4cf876f75.png" alt="Handmade ceramic mug set" loading="lazy" />
+                </div>
+                <div class="body">
+                  <div class="product-meta">
+                    <span class="tag">Home</span>
+                    <span class="rating">&#9733; 5.0</span>
+                  </div>
+                  <h3>Handmade Ceramic Mug Set</h3>
+                  <p>Handmade homeware from a local craft seller.</p>
+                  <div class="row-between">
+                    <span class="price">R 295</span>
+                    <a href="../shop/product-details.html" class="btn btn-light">Buy now</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card" data-category="fashion" data-price="45">
+                <div class="media has-photo" aria-label="Handmade beaded accessories">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_7b36f8f299_c2efb6344186fdf9.png" alt="Handmade beaded accessories" loading="lazy" />
+                </div>
+                <div class="body">
+                  <div class="product-meta">
+                    <span class="tag">Fashion &amp; textiles</span>
+                    <span class="rating">&#9733; 4.7</span>
+                  </div>
+                  <h3>Handmade Beaded Keyring</h3>
+                  <p>Affordable handmade accessories by a neighbourhood maker.</p>
+                  <div class="row-between">
+                    <span class="price">R 45</span>
+                    <a href="../shop/product-details.html" class="btn btn-light">Buy now</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card" data-category="home" data-price="180">
+                <div class="media has-photo" aria-label="Handwoven basket">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_bb2f1e2f8e_10d6d2d606474ab3.png" alt="Handwoven storage basket" loading="lazy" />
+                </div>
+                <div class="body">
+                  <div class="product-meta">
+                    <span class="tag">Home</span>
+                    <span class="rating">&#9733; 4.9</span>
+                  </div>
+                  <h3>Handwoven Storage Basket</h3>
+                  <p>Locally made home storage from a small craft business.</p>
+                  <div class="row-between">
+                    <span class="price">R 180</span>
+                    <a href="../shop/product-details.html" class="btn btn-light">Buy now</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="product-card" data-category="food" data-price="175">
+                <div class="media has-photo" aria-label="Smoked biltong">
+                  <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_b1b523b091_2f5d4e16a2a4d531.png" alt="Packaged smoked biltong from a local food seller" loading="lazy" />
+                </div>
+                <div class="body">
+                  <div class="product-meta">
+                    <span class="tag">Food &amp; pantry</span>
+                    <span class="rating">&#9733; 4.8</span>
+                  </div>
+                  <h3>Smoked Biltong Strips</h3>
+                  <p>A savoury snack from a small Soshanguve food business.</p>
+                  <div class="row-between">
+                    <span class="price">R 175</span>
+                    <a href="../shop/product-details.html" class="btn btn-light">Buy now</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div id="empty-state" class="notice error" hidden>No products match your search filters.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">BizConnect</div>
+            <p>Designed to help small businesses reach eager buyers with clarity and trust.</p>
+          </div>
+          <div>
+            <h3>Explore</h3>
+            <p><a href="marketplace.html">Marketplace</a></p>
+            <p><a href="businesses.html">Businesses</a></p>
+            <p><a href="about.html">About</a></p>
+          </div>
+          <div>
+            <h3>Support</h3>
+            <p><a href="contact.html">Contact</a></p>
+            <p><a href="../account/login.html">Login</a></p>
+            <p><a href="../business/onboarding.html">Business setup</a></p>
+          </div>
+          <div>
+            <h3>Need help?</h3>
+            <p>Support channels are not available yet.</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; <span data-year></span> BizConnect Marketplace</span>
+          <span>Built for delightful discovery.</span>
+        </div>
+      </div>
+    </footer>
+
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/storefront.js"></script>
+  </body>
+</html>
+
